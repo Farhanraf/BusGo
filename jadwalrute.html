@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route BusGo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #490a0a;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 1.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #cf5342;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 14px;
+            color: white;
+            background-color: #4caf6a;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .action-button {
+            padding: 5px 10px;
+            font-size: 12px;
+            color: white;
+            background-color: #f44336;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .action-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Route Information BusGo</h1>
+    </header>
+    <div class="container">
+        <h2>Available Routes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Rute</th>
+                    <th>Kota Awal</th>
+                    <th>Kota Tujuan</th>
+                    <th>Jarak (km)</th>
+                    <th>Harga (IDR)</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data rows will be dynamically inserted here -->
+                <tr>
+                    <td>1</td>
+                    <td>Jakarta</td>
+                    <td>Bandung</td>
+                    <td>150</td>
+                    <td>150,000.00</td>
+                    <td><button class="action-button">Hapus</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Surabaya</td>
+                    <td>Malang</td>
+                    <td>100</td>
+                    <td>100,000.00</td>
+                    <td><button class="action-button">Hapus</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Purwokerto</td>
+                    <td>Jakarta</td>
+                    <td>367</td>
+                    <td>367,000.00</td>
+                    <td><button class="action-button">Hapus</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Jakarta</td>
+                    <td>Semarang</td>
+                    <td>400</td>
+                    <td>400,000.00</td>
+                    <td><button class="action-button">Hapus</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="#" class="button">Add New Route</a>
+    </div>
+</body>
+</html>
