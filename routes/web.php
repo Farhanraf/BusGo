@@ -25,3 +25,7 @@ Route::get('/destinasi', function () {
 Route::get('/aboutus', function () {
     return view('aboutus');
 });
+
+Route::get('/admin', function () {
+    return view('admin/index');
+});
