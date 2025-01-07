@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page with Carousel</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <title>Login BusGo</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
@@ -14,13 +14,13 @@
         <div class="left-container">
             <div class="carousel">
                 <div class="logo">
-                    <img src="/img/BUSGo.png" alt="Logo">
+                    <img src="img/BUSGo.png" alt="Logo">
                 </div>
                 <div class="slides">
                     
-                    <img src="/img/terminal.png" alt="Image 1">
-                    <img src="/img/inter1.jpg" alt="Image 2">
-                    <img src="/img/back.png" alt="Image 3">
+                    <img src="img/terminal.png" alt="Image 1">
+                    <img src="img/inter1.jpg" alt="Image 2">
+                    <img src="img/back.png" alt="Image 3">
                 </div>
                 <div class="carousel-indicators">
                     <span class="indicator active" data-index="0"></span>
@@ -50,7 +50,7 @@
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" required>
                     </div>
-                    <a href="../mainview/mainview.html">
+                    <a href="../mainview">
                         <button type="button">Login</button>
                     </a>                    
                     <p>Don't have an account? <a><button class="tab-button" data-tab="register">Register</button></a></p>
