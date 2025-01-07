@@ -10,7 +10,7 @@
 
         <link rel="shortcut icon" href="img/BUS.png" type="image/png">
 
-        <link rel="stylesheet" href="css/booking.css">
+        <link rel="stylesheet" href="/css/booking.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
