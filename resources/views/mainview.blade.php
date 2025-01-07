@@ -102,23 +102,23 @@
                         <ul class="navbar-list">
 
                             <li>
-                                <a href="#home" class="navbar-link" data-nav-link>Home</a>
+                                <a href="/mainview" class="navbar-link" data-nav-link>Home</a>
                             </li>
 
                             <li>
-                                <a href=/booking class="navbar-link" data-nav-link>Booking</a>
+                                <a href="/booking" class="navbar-link" data-nav-link>Booking</a>
                             </li>
 
                             <li>
-                                <a href="/cektravel/cektravel.html" class="navbar-link" data-nav-link>Cek Travel</a>
+                                <a href="/cektravel" class="navbar-link" data-nav-link>Cek Travel</a>
                             </li>
 
                             <li>
-                                <a href="/destinasi/destinasi.html" class="navbar-link" data-nav-link>Destinasi</a>
+                                <a href="/destinasi" class="navbar-link" data-nav-link>Destinasi</a>
                             </li>
 
                             <li>
-                                <a href="#contact" class="navbar-link" data-nav-link>About Us</a>
+                                <a href="/aboutus" class="navbar-link" data-nav-link>About Us</a>
                             </li>
 
                         </ul>

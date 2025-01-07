@@ -13,3 +13,15 @@ Route::get('/mainview', function () {
 Route::get('/booking', function () {
     return view('booking');
 });
+
+Route::get('/cektravel', function () {
+    return view('cektravel');
+});
+
+Route::get('/destinasi', function () {
+    return view('destinasi');
+});
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});

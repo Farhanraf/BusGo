@@ -10,7 +10,7 @@
 
         <link rel="shortcut icon" href="img/BUS.png" type="image/png">
 
-        <link rel="stylesheet" href="/css/booking.css">
+        <link rel="stylesheet" href="css/cektravel.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -134,63 +134,43 @@
         <main>
             <article>
                 <section class="back" id="home">
-                    <section id="booking" class="booking-section">
-                        <h2 class="section-title">Booking Perjalanan</h2>
-                        <p class="section-description">Pesan perjalanan Anda dengan mudah. Pilih kota asal, tujuan,
-                            tanggal, dan mitra perjalanan yang sesuai.</p>
+                    <section id="cek-travel" class="cek-travel-section">
+                        <h2 class="section-title">CEK TRAVEL</h2>
+                        <p class="section-description">Temukan mitra perjalanan terbaik untuk perjalanan Anda dengan
+                            mudah.</p>
 
-                        <div class="booking-container">
-                            <!-- Left Container -->
-                            <div class="left-container">
-                                <h3>Rute Perjalanan</h3>
-                                <form class="route-form">
-                                    <label for="asal">Kota Asal</label>
-                                    <input type="text" id="asal" name="asal" placeholder="Kota Asal" required>
+                        <div class="cek-travel-container">
+                            <!-- Form Container -->
+                            <div class="form-container">
+                                <form class="travel-form">
+                                    <label for="asal-kota">Kota Asal</label>
+                                    <input type="text" id="asal-kota" name="asal-kota" placeholder="Kota Asal" required>
 
-                                    <label for="tujuan">Kota Tujuan</label>
-                                    <input type="text" id="tujuan" name="tujuan" placeholder="Kota Tujuan" required>
+                                    <label for="tujuan-kota">Kota Tujuan</label>
+                                    <input type="text" id="tujuan-kota" name="tujuan-kota" placeholder="Kota Tujuan"
+                                        required>
 
-                                    <label for="tanggal">Tanggal Perjalanan</label>
-                                    <input type="date" id="tanggal" name="tanggal" required>
+                                    <label for="tanggal-travel">Tanggal Perjalanan</label>
+                                    <input type="date" id="tanggal-travel" name="tanggal-travel" required>
+
+                                    <button type="submit" class="btn-submit">Cek Mitra</button>
                                 </form>
-
-                                <h3>Mitra Perjalanan</h3>
-                                <div class="partners-list">
-                                    <div class="partner-card">
-                                        <img src="mitra-logo.png" alt="Logo Mitra" class="partner-logo">
-                                        <p class="partner-name">Mitra 1</p>
-                                        <p class="seats">Jumlah Kursi: 30</p>
-                                        <p class="price">Harga: Rp 300,000</p>
-                                        <p class="departure-date">Hari, Tanggal: Senin, 12 Februari 2024</p>
-                                    </div>
-                                    <!-- Repeat for other partners -->
-                                </div>
                             </div>
 
-                            <!-- Right Container -->
-                            <div class="right-container">
-                                <h3>Detail Pemesanan</h3>
-                                <p><strong>Kota Asal:</strong> <span id="asal-detail"></span></p>
-                                <p><strong>Kota Tujuan:</strong> <span id="tujuan-detail"></span></p>
-                                <p><strong>Tanggal Perjalanan:</strong> <span id="tanggal-detail"></span></p>
-
-                                <h4>Mitra Terpilih</h4>
-                                <p><strong>Nama Mitra:</strong> <span id="mitra-name"></span></p>
-                                <p><strong>Jam Keberangkatan:</strong> <span id="jam-keberangkatan"></span></p>
-                                <p><strong>Jam Kedatangan:</strong> <span id="jam-kedatangan"></span></p>
-                                <p><strong>Hari, Tanggal:</strong> <span id="hari-tanggal"></span></p>
-
-                                <h4>Pilihan Kursi</h4>
-                                <div class="seat-selection">
-                                    <label for="seat-available">Kursi Tersedia</label>
-                                    <div class="seat-options">
-                                        <button type="button" class="seat available">Tersedia</button>
-                                        <button type="button" class="seat booked">Terbooking</button>
-                                        <button type="button" class="seat selected">Dipilih</button>
+                            <!-- Results Container -->
+                            <div class="results-container">
+                                <h3>Daftar Mitra Tersedia</h3>
+                                <div class="partners-list">
+                                    <!-- Example Partner Card -->
+                                    <div class="partner-card">
+                                        <img src="mitra-logo.png" alt="Logo Mitra" class="partner-logo">
+                                        <p class="partner-name">Nama Mitra</p>
+                                        <p class="seats">Jumlah Kursi Tersedia: 25</p>
+                                        <p class="price">Harga: Rp 250,000</p>
+                                        <p class="travel-date">Tanggal: Senin, 15 Januari 2024</p>
                                     </div>
+                                    <!-- Repeat Partner Cards dynamically with backend data -->
                                 </div>
-
-                                <button class="btn-continue">Lanjutkan Pembayaran</button>
                             </div>
                         </div>
                     </section>
@@ -202,7 +182,7 @@
             <ion-icon name="chevron-up-outline"></ion-icon>
         </a>
 
-        <script src="js/booking.js"></script>
+        <script src="js/cektravel.js"></script>
 
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
