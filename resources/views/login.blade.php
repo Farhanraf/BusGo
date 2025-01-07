@@ -14,13 +14,13 @@
         <div class="left-container">
             <div class="carousel">
                 <div class="logo">
-                    <img src="/assets/image/BUSGo.png" alt="Logo">
+                    <img src="/img/BUSGo.png" alt="Logo">
                 </div>
                 <div class="slides">
                     
-                    <img src="/assets/image/terminal.png" alt="Image 1">
-                    <img src="/assets/image/inter1.jpg" alt="Image 2">
-                    <img src="/assets/image/back.png" alt="Image 3">
+                    <img src="/img/terminal.png" alt="Image 1">
+                    <img src="/img/inter1.jpg" alt="Image 2">
+                    <img src="/img/back.png" alt="Image 3">
                 </div>
                 <div class="carousel-indicators">
                     <span class="indicator active" data-index="0"></span>

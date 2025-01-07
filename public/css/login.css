@@ -10,7 +10,7 @@ body {
     display: flex;
     height: 100vh;
     overflow: hidden;
-    background: url('/assets/image/inter2.jpg') no-repeat center center fixed;
+    background: url('/img/inter2.jpg') no-repeat center center fixed;
     background-size: cover;
     backdrop-filter: blur(15px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
