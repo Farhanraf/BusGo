@@ -106,7 +106,7 @@
                             </li>
 
                             <li>
-                                <a href=/booking/booking.html class="navbar-link" data-nav-link>Booking</a>
+                                <a href=/booking class="navbar-link" data-nav-link>Booking</a>
                             </li>
 
                             <li>
