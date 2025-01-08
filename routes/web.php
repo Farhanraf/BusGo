@@ -36,6 +36,24 @@ Route::get('/admin', function () {
     return view('admin/index');
 });
 
+Route::get('/order', function () {
+    return view('admin/order');
+});
+
+Route::get('/managebus', function () {
+    return view('admin/managebus');
+});
+
+Route::get('/managejadwal', function () {
+    return view('admin/managejadwal');
+});
+Route::get('/manageadmin', function () {
+    return view('admin/manageadmin');
+});
+Route::get('/manageuser', function () {
+    return view('admin/manageuser');
+});
+
 Route::get('/login', function () {
     return view('login');
 })->name('login');

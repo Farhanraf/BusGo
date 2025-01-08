@@ -18,8 +18,8 @@
             <li><a href="/admin">Dashboard</a></li>
             <li><a href="/order">Orders</a></li>
             <li><a href="/managebus">Manage Bus</a></li>
-            <li><a href="/managejadwal">Manage Jadwal</a></li> <!-- Perbaikan: ganti #users dengan /users -->
-            <li><a href="/manageadmin">Manage Admin</a></li> <!-- Perbaikan: ganti #reports dengan /reports -->
+            <li><a href="/users">Manage Jadwal</a></li> <!-- Perbaikan: ganti #users dengan /users -->
+            <li><a href="/reports">Manage Admin</a></li> <!-- Perbaikan: ganti #reports dengan /reports -->
             <li><a href="/manageusers">Manage Users</a></li> <!-- Perbaikan: ganti #settings dengan /settings -->
             <li><a href="/logout">Logout</a></li> <!-- Perbaikan: ganti #logout dengan /logout -->
         </ul>
