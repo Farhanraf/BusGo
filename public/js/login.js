@@ -43,4 +43,14 @@ document.querySelectorAll('.tab-button').forEach(button => {
         const tab = button.getAttribute('data-tab');
         document.getElementById(tab).style.display = 'block';
     });
+
+    window.onload = function() {
+        const flashModal = document.getElementById('flashModal');
+        if (flashModal) {
+            setTimeout(() => {
+                flashModal.style.opacity = '0';
+                setTimeout(() => flashModal.remove(), 500); // Remove after fade out
+            }, 5000);
+        }
+    }
 });
