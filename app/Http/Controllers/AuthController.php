@@ -35,7 +35,7 @@ class AuthController extends Controller
 
         // Cek login untuk admin
         if (Auth::guard('admin')->attempt($request->only('username', 'password'))) {
-            return redirect('/admin/dashboard')->with('success', 'Login Admin berhasil');
+            return redirect('/admin')->with('success', 'Login Admin berhasil');
         }
 
         return back()->with('error', 'Username atau password salah');

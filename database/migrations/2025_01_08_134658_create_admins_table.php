@@ -12,10 +12,10 @@ return new class extends Migration
     public function up()
 {
     Schema::create('admins', function (Blueprint $table) {
-        $table->id();
+        $table->id('id_admin');  // Primary key
         $table->string('username')->unique();
         $table->string('password');
-        $table->timestamps();
+        $table->timestamps();  // Menambahkan kolom created_at dan updated_at
     });
 }
 

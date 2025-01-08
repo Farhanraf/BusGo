@@ -121,6 +121,10 @@
                                 <a href="/aboutus" class="navbar-link" data-nav-link>About Us</a>
                             </li>
 
+                            <li>
+                                <a href="/logout" class="navbar-link" data-nav-link>LogOut</a>
+                            </li>
+
                         </ul>
 
                     </nav>
