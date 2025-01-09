@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AdminController;
 
 Route::post('/login/user', [AuthController::class, 'loginUser']);
 Route::post('/login/admin', [AuthController::class, 'loginAdmin']);
@@ -51,7 +52,7 @@ Route::get('/manageadmin', function () {
     return view('admin/manageadmin');
 });
 Route::get('/manageuser', function () {
-    return view('admin/manageuser');
+    return view('admin/manageusers');
 });
 
 Route::get('/login', function () {
@@ -72,3 +73,26 @@ Route::get('/logout', function () {
     Auth::logout();
     return redirect()->route('login');
 })->name('logout');
+
+
+Route::get('/manageadmin', [AdminController::class, 'manageadmin'])->name('admin.manageadmin');
+
+Route::post('/admin', [AdminController::class, 'store'])->name('admin.store');
+Route::post('/admin/store', [AdminController::class, 'store'])->name('admin.store');
+Route::get('/admin/{id}/edit', [AdminController::class, 'edit'])->name('admin.edit');
+Route::put('/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
+Route::delete('/admin/{id_admin}', [AdminController::class, 'destroy'])->name('admin.destroy');
+Route::get('/manage-admin', [AdminController::class, 'index'])->name('manage.admin');
+
+
+
+// Route untuk halaman edit admin
+Route::get('/admin/{id_admin}/edit', [AdminController::class, 'edit'])->name('admin.edit');
+
+// Route untuk update data admin
+Route::put('admin/{id_admin}', [AdminController::class, 'update'])->name('admin.update');
+
+Route::middleware(['auth:admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    // route lainnya...
+});

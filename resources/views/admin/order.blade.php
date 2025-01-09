@@ -18,21 +18,21 @@
             <li><a href="/admin">Dashboard</a></li>
             <li><a href="/order">Orders</a></li>
             <li><a href="/managebus">Manage Bus</a></li>
-            <li><a href="/managejadwal">Manage Jadwal</a></li> <!-- Perbaikan: ganti #users dengan /users -->
-            <li><a href="/manageadmin">Manage Admin</a></li> <!-- Perbaikan: ganti #reports dengan /reports -->
-            <li><a href="/manageusers">Manage Users</a></li> <!-- Perbaikan: ganti #settings dengan /settings -->
-            <li><a href="/logout">Logout</a></li> <!-- Perbaikan: ganti #logout dengan /logout -->
+            <li><a href="/managejadwal">Manage Jadwal</a></li>
+            <li><a href="/manageadmin">Manage Admin</a></li>
+            <li><a href="/manageuser">Manage Users</a></li>
+            <li><a href="/logout">Logout</a></li>
         </ul>
     </div>
 
     <div class="main-content">
         <header>
-            <h1>Admin Dashboard</h1>
+            <h1>@yield('header-title')</h1>
             <div class="user-info">
-                <button id="userButton">Welcome, Admin</button>
+                <button id="userButton">Welcome, {{ Auth::guard('admin')->user()->username }}</button>
                 <div class="dropdown-menu" id="dropdownMenu">
                     <a href="#profile"><i class="fas fa-user-circle"></i> Ubah Profile</a>
-                    <a href="#logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </div>
         </header>

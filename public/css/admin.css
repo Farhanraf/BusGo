@@ -10,13 +10,11 @@ body {
 /* Sidebar Styles */
 .sidebar {
     width: 250px;
-    background-color: #2c3e50;
+    height: 100vh;
+    background-color: #343a40;
     color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
     padding-top: 20px;
+    position: fixed;
 }
 
 .sidebar img {
@@ -132,4 +130,13 @@ header h1 {
 
 .stat-box:hover {
     background-color: #bdc3c7;
+}
+#userButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
 }
