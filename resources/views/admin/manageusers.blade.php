@@ -21,6 +21,7 @@
             <li><a href="/managejadwal">Manage Jadwal</a></li>
             <li><a href="/manageadmin">Manage Admin</a></li>
             <li><a href="/manageuser" class="active">Manage Users</a></li>
+            <li><a href="/managerutes">Manage Rute</a></li>
             <li><a href="/logout">Logout</a></li>
         </ul>
     </div>
@@ -39,7 +40,6 @@
 
         <section id="content">
             <div class="manage-users">
-                <h2>Manage Users</h2>
                 <a href="{{ route('manageuser.create') }}" class="btn btn-primary">Tambah User</a>
 
                 @if (session('success'))

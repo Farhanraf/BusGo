@@ -20,6 +20,7 @@
         <li><a href="/managejadwal">Manage Jadwal</a></li>
         <li><a href="/manageadmin">Manage Admin</a></li>
         <li><a href="/manageuser">Manage Users</a></li>
+        <li><a href="/managerutes">Manage Rute</a></li>
         <li><a href="/logout">Logout</a></li>
     </ul>
 </div>

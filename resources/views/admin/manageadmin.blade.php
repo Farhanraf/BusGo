@@ -21,6 +21,7 @@
             <li><a href="/managejadwal">Manage Jadwal</a></li>
             <li><a href="/manageadmin" class="active">Manage Admin</a></li>
             <li><a href="/manageuser">Manage Users</a></li>
+            <li><a href="/managerutes">Manage Rute</a></li>
             <li><a href="/logout">Logout</a></li>
         </ul>
     </div>
@@ -44,7 +45,6 @@
 
         @section('content')
         <div class="container">
-            <h2>Tambah Admin</h2>
             <form action="{{ route('admin.store') }}" method="POST">
                 @csrf
                 <div class="form-group">

@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RuteController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BusController;
 
 Route::post('/login/user', [AuthController::class, 'loginUser']);
 Route::post('/login/admin', [AuthController::class, 'loginAdmin']);
@@ -54,6 +56,10 @@ Route::get('/manageadmin', function () {
 });
 Route::get('/manageuser', function () {
     return view('admin/manageusers');
+});
+
+Route::get('/managerutes', function () {
+    return view('admin/managerute');
 });
 
 Route::get('/login', function () {
@@ -114,3 +120,17 @@ Route::delete('/manageuser/{id}', [UserController::class, 'destroy'])->name('man
 Route::middleware(['auth'])->group(function () {
     Route::get('/manage-users', [UserController::class, 'index'])->name('manageusers.index');
 });
+
+
+Route::get('/managerute', [RuteController::class, 'index'])->name('rute.index');
+Route::post('/managerute', [RuteController::class, 'store'])->name('rute.store');
+Route::delete('/managerute/{id}', [RuteController::class, 'destroy'])->name('rute.destroy');
+
+Route::get('/managebus', [BusController::class, 'index'])->name('bus.index');
+Route::post('/managebus', [BusController::class, 'store'])->name('bus.store');
+Route::delete('/managebus/{id}', [BusController::class, 'destroy'])->name('bus.destroy');
+// Route untuk menampilkan form edit bus
+Route::get('/bus/{id}/edit', [BusController::class, 'edit'])->name('bus.edit');
+
+// Route untuk mengupdate data bus
+Route::put('/bus/{id}', [BusController::class, 'update'])->name('bus.update');
