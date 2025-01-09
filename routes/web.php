@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 Route::post('/login/user', [AuthController::class, 'loginUser']);
 Route::post('/login/admin', [AuthController::class, 'loginAdmin']);
@@ -96,3 +97,12 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
     // route lainnya...
 });
+
+Route::get('/manage-user', [UserController::class, 'index'])->name('manageuser');
+Route::get('/manageuser', [UserController::class, 'index'])->name('manageuser');
+Route::get('/manageuser', [UserController::class, 'index'])->name('manageuser.index');
+Route::get('/manageuser/create', [UserController::class, 'create'])->name('manageuser.create');
+Route::post('/manageuser', [UserController::class, 'store'])->name('manageuser.store');
+Route::get('/manageuser/{id}/edit', [UserController::class, 'edit'])->name('manageuser.edit');
+Route::put('/manageuser/{id}', [UserController::class, 'update'])->name('manageuser.update');
+Route::delete('/manageuser/{id}', [UserController::class, 'destroy'])->name('manageuser.destroy');

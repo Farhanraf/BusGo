@@ -19,7 +19,7 @@
             <li><a href="/order">Orders</a></li>
             <li><a href="/managebus">Manage Bus</a></li>
             <li><a href="/managejadwal">Manage Jadwal</a></li>
-            <li><a href="/manageadmin">Manage Admin</a></li>
+            <li><a href="/manageadmin" class="active">Manage Admin</a></li>
             <li><a href="/manageuser">Manage Users</a></li>
             <li><a href="/logout">Logout</a></li>
         </ul>
@@ -111,12 +111,11 @@
                 </form>
             </div>
 
-
         </div>
         @endsection
 
         <div class="content">
-            @yield(section: 'content')
+            @yield('content')
         </div>
     </div>
 
