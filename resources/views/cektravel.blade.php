@@ -142,20 +142,38 @@
                         <div class="cek-travel-container">
                             <!-- Form Container -->
                             <div class="form-container">
-                                <form class="travel-form">
+                                <form action="{{ route('cek-jadwal') }}" method="GET" class="travel-form">
+                                    <!-- Pilihan Kota Asal -->
                                     <label for="asal-kota">Kota Asal</label>
                                     <input type="text" id="asal-kota" name="asal-kota" placeholder="Kota Asal" required>
 
+                                    <!-- Pilihan Kota Tujuan -->
                                     <label for="tujuan-kota">Kota Tujuan</label>
-                                    <input type="text" id="tujuan-kota" name="tujuan-kota" placeholder="Kota Tujuan"
-                                        required>
+                                    <input type="text" id="tujuan-kota" name="tujuan-kota" placeholder="Kota Tujuan" required>
 
-                                    <label for="tanggal-travel">Tanggal Perjalanan</label>
-                                    <input type="date" id="tanggal-travel" name="tanggal-travel" required>
+                                    <!-- Pilihan Bus (Optional) -->
+                                    <label for="id_bus">Bus</label>
+                                    <select name="id_bus" id="id_bus" class="form-control">
+                                        <option value="">Pilih Bus (Optional)</option>
+                                        @foreach ($buses as $bus)
+                                        <option value="{{ $bus->id_bus }}">{{ $bus->nama_bus }}</option>
+                                        @endforeach
+                                    </select>
 
-                                    <button type="submit" class="btn-submit">Cek Mitra</button>
+                                    <!-- Pilihan Rute (Optional) -->
+                                    <label for="id_rute">Rute</label>
+                                    <select name="id_rute" id="id_rute" class="form-control">
+                                        <option value="">Pilih Rute (Optional)</option>
+                                        @foreach ($rutes as $rute)
+                                        <option value="{{ $rute->id_rute }}">{{ $rute->nama_rute }}</option>
+                                        @endforeach
+                                    </select>
+
+                                    <!-- Tombol Submit -->
+                                    <button type="submit" class="btn-submit">Cek Bus</button>
                                 </form>
                             </div>
+
 
                             <!-- Results Container -->
                             <div class="results-container">

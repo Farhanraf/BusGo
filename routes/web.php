@@ -164,3 +164,6 @@ Route::get('/rute/{id}/edit', [RuteController::class, 'edit'])->name('rute.edit'
 
 // Mengupdate data rute berdasarkan ID
 Route::put('/rute/{id}', [RuteController::class, 'update'])->name('rute.update');
+
+
+Route::get('/cek-jadwal', [JadwalController::class, 'cekJadwal'])->name('cek-jadwal');
