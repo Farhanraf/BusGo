@@ -166,62 +166,113 @@ h1 {
     margin-bottom: 20px;
     border-radius: 5px;
 }
-/* Styling for the input fields */
-.form-control {
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: inline-block;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Fokus pada text field */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    outline: none;
+}
+
+/* General Styling for Form */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input[type="datetime-local"],
+select.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
     background-color: #f9f9f9;
     transition: border-color 0.3s ease;
 }
 
-.form-control:focus {
+/* Focused state for inputs */
+input[type="datetime-local"]:focus,
+select.form-control:focus {
     border-color: #007bff;
-    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.btn {
+/* Styling for form buttons */
+button[type="submit"] {
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 14px;
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+/* Hover effect on submit button */
+button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-table th, table td {
-    padding: 10px;
-    text-align: center;
+/* Style for required input fields */
+input[required] {
+    background-color: #fff9e6;
 }
 
-table th {
-    background-color: #f8f9fa;
-    font-weight: bold;
+input[required]:focus {
+    background-color: #fff;
 }
 
-.alert-success {
-    background-color: #d4edda;
-    color: #155724;
+/* Styling for select dropdown */
+select.form-control {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+    font-size: 16px;
     padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+}
+
+/* Adjust the overall spacing of form */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Add spacing between form elements */
+input[type="datetime-local"],
+select.form-control {
+    margin-top: 5px;
+}
+
+/* Additional styles for the form container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

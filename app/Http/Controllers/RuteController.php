@@ -7,32 +7,67 @@ use Illuminate\Http\Request;
 
 class RuteController extends Controller
 {
-    // Menampilkan halaman manage rute
+    /**
+     * Menampilkan halaman utama dengan tabel rute.
+     */
     public function index()
     {
         $rutes = Rute::all();
+        @dd($rutes);
         return view('admin.managerute', compact('rutes'));
     }
 
-    // Menyimpan data rute baru
+    /**
+     * Menyimpan data rute baru.
+     */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'kota_awal' => 'required|string|max:100',
-            'kota_tujuan' => 'required|string|max:100',
+        $request->validate([
+            'kota_awal' => 'required|max:100',
+            'kota_tujuan' => 'required|max:100',
             'jarak' => 'required|numeric',
             'harga' => 'required|numeric',
         ]);
 
-        Rute::create($validated);
-        return redirect()->back()->with('success', 'Rute berhasil ditambahkan.');
+        Rute::create([
+            'kota_awal' => $request->kota_awal,
+            'kota_tujuan' => $request->kota_tujuan,
+            'jarak' => $request->jarak,
+            'harga' => $request->harga,
+        ]);
+
+        return redirect()->route('rute.index')->with('success', 'Rute berhasil ditambahkan');
     }
 
-    // Menghapus data rute
+    public function edit($id)
+    {
+        $rute = Rute::findOrFail($id);
+        return view('editrute', compact('rute'));
+    }
+
+    // Mengupdate data rute
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'kota_awal' => 'required|max:100',
+            'kota_tujuan' => 'required|max:100',
+            'jarak' => 'required|numeric',
+            'harga' => 'required|numeric',
+        ]);
+
+        $rute = Rute::findOrFail($id);
+        $rute->update($request->all());
+        return redirect()->route('rute.index')->with('success', 'Rute berhasil diperbarui');
+    }
+
+    /**
+     * Menghapus data rute berdasarkan ID.
+     */
     public function destroy($id)
     {
         $rute = Rute::findOrFail($id);
         $rute->delete();
-        return redirect()->back()->with('success', 'Rute berhasil dihapus.');
+
+        return redirect()->route('rute.index')->with('success', 'Rute berhasil dihapus');
     }
 }

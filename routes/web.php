@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RuteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BusController;
+use App\Http\Controllers\JadwalController;
 
 Route::post('/login/user', [AuthController::class, 'loginUser']);
 Route::post('/login/admin', [AuthController::class, 'loginAdmin']);
@@ -122,9 +123,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::get('/managerute', [RuteController::class, 'index'])->name('rute.index');
-Route::post('/managerute', [RuteController::class, 'store'])->name('rute.store');
-Route::delete('/managerute/{id}', [RuteController::class, 'destroy'])->name('rute.destroy');
 
 Route::get('/managebus', [BusController::class, 'index'])->name('bus.index');
 Route::post('/managebus', [BusController::class, 'store'])->name('bus.store');
@@ -134,3 +132,35 @@ Route::get('/bus/{id}/edit', [BusController::class, 'edit'])->name('bus.edit');
 
 // Route untuk mengupdate data bus
 Route::put('/bus/{id}', [BusController::class, 'update'])->name('bus.update');
+
+
+// Menampilkan halaman manage jadwal dan tabel jadwal
+Route::get('/managejadwal', [JadwalController::class, 'index'])->name('jadwal.index');
+
+// Menyimpan data jadwal baru
+Route::post('/managejadwal', [JadwalController::class, 'store'])->name('jadwal.store');
+
+// Menghapus data jadwal berdasarkan ID
+Route::delete('/managejadwal/{id}', [JadwalController::class, 'destroy'])->name('jadwal.destroy');
+
+// Menampilkan form edit jadwal
+Route::get('/jadwal/{id}/edit', [JadwalController::class, 'edit'])->name('jadwal.edit');
+
+// Mengupdate data jadwal berdasarkan ID
+Route::put('/jadwal/{id}', [JadwalController::class, 'update'])->name('jadwal.update');
+
+
+// Menampilkan halaman utama manage rute
+Route::get('/managerute', [RuteController::class, 'index'])->name('rute.index');
+
+// Menyimpan data rute baru
+Route::post('/managerute', [RuteController::class, 'store'])->name('rute.store');
+
+// Menghapus data rute berdasarkan ID
+Route::delete('/managerute/{id}', [RuteController::class, 'destroy'])->name('rute.destroy');
+
+// Menampilkan form edit rute berdasarkan ID
+Route::get('/rute/{id}/edit', [RuteController::class, 'edit'])->name('rute.edit');
+
+// Mengupdate data rute berdasarkan ID
+Route::put('/rute/{id}', [RuteController::class, 'update'])->name('rute.update');

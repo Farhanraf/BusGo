@@ -8,10 +8,13 @@ class Rute extends Model
 {
     use HasFactory;
 
-    protected $table = 'rute'; // Nama tabel di database
-    protected $primaryKey = 'id_rute'; // Primary key
-
+    protected $table = 'rute';
+    protected $primaryKey = 'id_rute';
+    
     protected $fillable = [
-        'kota_awal', 'kota_tujuan', 'jarak', 'harga'
+        'kota_awal',
+        'kota_tujuan',
+        'jarak',
+        'harga',
     ];
 }

@@ -20,13 +20,13 @@
             <li><a href="/managebus">Manage Bus</a></li>
             <li><a href="/managejadwal">Manage Jadwal</a></li>
             <li><a href="/manageadmin">Manage Admin</a></li>
-            <li><a href="/manageuser" class="active">Manage Users</a></li>
-            <li><a href="/managerutes">Manage Rute</a></li>
+            <li><a href="/manageuser">Manage Users</a></li>
+            <li><a href="/managerutes" class="active">Manage Rute</a></li>
             <li><a href="/logout">Logout</a></li>
         </ul>
     </div>
 
-    <dclass="main-content">
+    <div class="main-content">
         <header>
             <h1>Manage Rute</h1>
             <div class="user-info">
@@ -38,72 +38,76 @@
             </div>
         </header>
 
-        <div class="container mt-5">
-            <h2>Manage Rute</h2>
-
-            <!-- Pesan sukses/error -->
-            @if(session('success'))
-            <div class="alert alert-success">{{ session('success') }}</div>
-            @endif
-
-            <!-- Form Tambah Rute -->
-            <form action="{{ route('rute.store') }}" method="POST" class="mb-4">
-                @csrf
-                <div class="row">
-                    <div class="col-md-3">
-                        <input type="text" name="kota_awal" class="form-control" placeholder="Kota Awal" required>
+        <section id="content">
+            <div class="manage-rutes">
+                <h2>Tambah Rute</h2>
+                <form action="{{ route('rute.store') }}" method="POST" class="mb-4">
+                    @csrf
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="text" name="kota_awal" class="form-control" placeholder="Kota Awal" required>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" name="kota_tujuan" class="form-control" placeholder="Kota Tujuan" required>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" step="0.1" name="jarak" class="form-control" placeholder="Jarak (km)" required>
+                        </div>
+                        <div class="col-md-2">
+                            <input type="number" step="0.01" name="harga" class="form-control" placeholder="Harga (Rp)" required>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary">Tambah Rute</button>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <input type="text" name="kota_tujuan" class="form-control" placeholder="Kota Tujuan" required>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="number" name="jarak" step="0.01" class="form-control" placeholder="Jarak (km)" required>
-                    </div>
-                    <div class="col-md-2">
-                        <input type="number" name="harga" step="0.01" class="form-control" placeholder="Harga (Rp)" required>
-                    </div>
-                    <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary">Tambah</button>
-                    </div>
-                </div>
-            </form>
+                </form>
 
-            <!-- Tabel Daftar Rute -->
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Kota Awal</th>
-                        <th>Kota Tujuan</th>
-                        <th>Jarak (km)</th>
-                        <th>Harga (Rp)</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($rutes as $rute)
-                    <tr>
-                        <td>{{ $rute->id_rute }}</td>
-                        <td>{{ $rute->kota_awal }}</td>
-                        <td>{{ $rute->kota_tujuan }}</td>
-                        <td>{{ $rute->jarak }}</td>
-                        <td>{{ $rute->harga }}</td>
-                        <td>
-                            <form action="{{ route('rute.destroy', $rute->id_rute) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+                @if (session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
 
-        </div>
+                <h2>Data Rute</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID Rute</th>
+                            <th>Kota Awal</th>
+                            <th>Kota Tujuan</th>
+                            <th>Jarak (km)</th>
+                            <th>Harga (Rp)</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (!empty($rutes) && $rutes->count() > 0)
+                        @foreach ($rutes as $rute)
+                        <tr>
+                            <td>{{ $rute->id_rute }}</td>
+                            <td>{{ $rute->kota_awal }}</td>
+                            <td>{{ $rute->kota_tujuan }}</td>
+                            <td>{{ $rute->jarak }}</td>
+                            <td>{{ number_format($rute->harga, 2) }}</td>
+                            <td>
+                                <form action="{{ route('rute.destroy', $rute->id_rute) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus rute ini?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                        @else
+                        <tr>
+                            <td colspan="6" class="text-center">Belum ada data rute</td>
+                        </tr>
+                        @endif
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
 
-        <script src="js/admin.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 
 </html>
