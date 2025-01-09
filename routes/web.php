@@ -8,7 +8,7 @@ use App\Http\Controllers\UserController;
 
 Route::post('/login/user', [AuthController::class, 'loginUser']);
 Route::post('/login/admin', [AuthController::class, 'loginAdmin']);
-
+Route::post('/login/admin', [AdminController::class, 'login'])->name('admin.login');
 
 Route::get('/', function () {
     return view('login');
@@ -97,6 +97,10 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
     // route lainnya...
 });
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin/manage', [AdminController::class, 'manage'])->name('admin.manage');
+});
+
 
 Route::get('/manage-user', [UserController::class, 'index'])->name('manageuser');
 Route::get('/manageuser', [UserController::class, 'index'])->name('manageuser');
@@ -106,3 +110,7 @@ Route::post('/manageuser', [UserController::class, 'store'])->name('manageuser.s
 Route::get('/manageuser/{id}/edit', [UserController::class, 'edit'])->name('manageuser.edit');
 Route::put('/manageuser/{id}', [UserController::class, 'update'])->name('manageuser.update');
 Route::delete('/manageuser/{id}', [UserController::class, 'destroy'])->name('manageuser.destroy');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/manage-users', [UserController::class, 'index'])->name('manageusers.index');
+});

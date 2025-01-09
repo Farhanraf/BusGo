@@ -56,3 +56,6 @@ function showEditForm(id, username) {
     formAction = formAction.replace('__ID__', id);
     document.getElementById('editForm').action = formAction;
 }
+
+const app = Vue.createApp(App);
+app.mount('#new-root');  // Ganti dengan elemen lain, misalnya #new-root
