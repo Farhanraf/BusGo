@@ -10,7 +10,8 @@ class Jadwal extends Model
     use HasFactory;
 
     protected $table = 'jadwal';
-
+    protected $primaryKey = 'id_jadwal';
+    
     protected $fillable = [
         'id_bus',
         'id_rute',
@@ -27,4 +28,6 @@ class Jadwal extends Model
     {
         return $this->belongsTo(Rute::class, 'id_rute');
     }
+    
+    
 }

@@ -150,13 +150,10 @@
                 <section class="hero" id="home">
                     <div class="container">
 
-                        <h2 class="h1 hero-title">Journey to explore world</h2>
+                        <h2 class="h1 hero-title">Journey to explore Indonesia</h2>
 
                         <p class="hero-text">
-                            Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit class corporis nostra rem
-                            quos
-                            voluptatibus habitant?
-                            Fames, vivamus minim nemo enim, gravida lobortis quasi, eum.
+                        BusGo adalah platform pemesanan tiket bus yang cepat, aman, dan mudah digunakan, menyediakan berbagai pilihan rute serta jadwal perjalanan dengan harga terbaik.
                         </p>
 
                         <div class="btn-group">
@@ -227,10 +224,7 @@
                         <h2 class="h2 section-title">Popular destination</h2>
 
                         <p class="section-text">
-                            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum
-                            cumque laudantium.
-                            Sit ornare
-                            mollitia tenetur, aptent.
+                        Nikmati pesona tempat-tempat populer di Indonesia, dari keindahan alam pegunungan dan pantai tropis hingga kekayaan budaya dan kuliner khas yang memikat hati para pelancong.
                         </p>
 
                         <ul class="popular-list">
@@ -363,10 +357,7 @@
                         <h2 class="h2 section-title">Checkout Our Packeges</h2>
 
                         <p class="section-text">
-                            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum
-                            cumque laudantium.
-                            Sit ornare
-                            mollitia tenetur, aptent.
+                        Nikmati pesona tempat-tempat populer di Indonesia, dari keindahan alam pegunungan dan pantai tropis hingga kekayaan budaya dan kuliner khas yang memikat hati para pelancong.
                         </p>
 
                         <ul class="package-list">
@@ -622,10 +613,7 @@
                         <h2 class="h2 section-title">Photo's From Travellers</h2>
 
                         <p class="section-text">
-                            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum
-                            cumque laudantium.
-                            Sit ornare
-                            mollitia tenetur, aptent.
+                        Nikmati pesona tempat-tempat populer di Indonesia, dari keindahan alam pegunungan dan pantai tropis hingga kekayaan budaya dan kuliner khas yang memikat hati para pelancong.
                         </p>
 
                         <ul class="gallery-list">
@@ -682,10 +670,7 @@
                             <h2 class="h2 section-title">Ready For Unforgatable Travel. Remember Us!</h2>
 
                             <p class="section-text">
-                                Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum.
-                                Vestibulum cumque
-                                laudantium. Sit ornare
-                                mollitia tenetur, aptent.
+                            Nikmati pesona tempat-tempat populer di Indonesia, dari keindahan alam pegunungan dan pantai tropis hingga kekayaan budaya dan kuliner khas yang memikat hati para pelancong.
                             </p>
                         </div>
 
@@ -717,10 +702,7 @@
                         </a>
 
                         <p class="footer-text">
-                            Urna ratione ante harum provident, eleifend, vulputate molestiae proin fringilla,
-                            praesentium magna conubia
-                            at
-                            perferendis, pretium, aenean aut ultrices.
+                        BusGo adalah platform pemesanan tiket bus yang cepat, aman, dan mudah digunakan, menyediakan berbagai pilihan rute serta jadwal perjalanan dengan harga terbaik.
                         </p>
 
                     </div>

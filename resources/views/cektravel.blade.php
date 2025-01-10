@@ -120,6 +120,9 @@
                             <li>
                                 <a href="/aboutus" class="navbar-link" data-nav-link>About Us</a>
                             </li>
+                            <li>
+                                <a href="/logout" class="navbar-link" data-nav-link>LogOut</a>
+                            </li>
 
                         </ul>
 
@@ -139,57 +142,43 @@
                         <p class="section-description">Temukan mitra perjalanan terbaik untuk perjalanan Anda dengan
                             mudah.</p>
 
-                        <div class="cek-travel-container">
-                            <!-- Form Container -->
-                            <div class="form-container">
-                                <form action="{{ route('cek-jadwal') }}" method="GET" class="travel-form">
-                                    <!-- Pilihan Kota Asal -->
-                                    <label for="asal-kota">Kota Asal</label>
-                                    <input type="text" id="asal-kota" name="asal-kota" placeholder="Kota Asal" required>
-
-                                    <!-- Pilihan Kota Tujuan -->
-                                    <label for="tujuan-kota">Kota Tujuan</label>
-                                    <input type="text" id="tujuan-kota" name="tujuan-kota" placeholder="Kota Tujuan" required>
-
-                                    <!-- Pilihan Bus (Optional) -->
-                                    <label for="id_bus">Bus</label>
-                                    <select name="id_bus" id="id_bus" class="form-control">
-                                        <option value="">Pilih Bus (Optional)</option>
-                                        @foreach ($buses as $bus)
-                                        <option value="{{ $bus->id_bus }}">{{ $bus->nama_bus }}</option>
-                                        @endforeach
-                                    </select>
-
-                                    <!-- Pilihan Rute (Optional) -->
-                                    <label for="id_rute">Rute</label>
-                                    <select name="id_rute" id="id_rute" class="form-control">
-                                        <option value="">Pilih Rute (Optional)</option>
-                                        @foreach ($rutes as $rute)
-                                        <option value="{{ $rute->id_rute }}">{{ $rute->nama_rute }}</option>
-                                        @endforeach
-                                    </select>
-
-                                    <!-- Tombol Submit -->
-                                    <button type="submit" class="btn-submit">Cek Bus</button>
-                                </form>
-                            </div>
-
-
-                            <!-- Results Container -->
-                            <div class="results-container">
-                                <h3>Daftar Mitra Tersedia</h3>
-                                <div class="partners-list">
-                                    <!-- Example Partner Card -->
-                                    <div class="partner-card">
-                                        <img src="mitra-logo.png" alt="Logo Mitra" class="partner-logo">
-                                        <p class="partner-name">Nama Mitra</p>
-                                        <p class="seats">Jumlah Kursi Tersedia: 25</p>
-                                        <p class="price">Harga: Rp 250,000</p>
-                                        <p class="travel-date">Tanggal: Senin, 15 Januari 2024</p>
-                                    </div>
-                                    <!-- Repeat Partner Cards dynamically with backend data -->
-                                </div>
-                            </div>
+                        <div class="container">
+                            <h1>Daftar Jadwal Keberangkatan</h1>
+                            @if (session('success'))
+                            <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID Jadwal</th>
+                                        <th>Bus</th>
+                                        <th>Rute</th>
+                                        <th>Waktu Berangkat</th>
+                                        <th>Waktu Tiba</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (!empty($jadwal) && $jadwal->count() > 0)
+                                    @foreach($jadwal as $item)
+                                    <tr>
+                                        <td>{{ $item->id_jadwal }}</td>
+                                        <td>{{ $item->bus->nama_bus }}</td>
+                                        <td>{{ $item->rute->nama_rute }}</td>
+                                        <td>{{ $item->waktu_berangkat }}</td>
+                                        <td>{{ $item->waktu_tiba }}</td>
+                                        <td>
+                                            <button type="button" onclick="pesan('{{ $item->id_jadwal }}')">Pesan</button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    @else
+                                    <tr>
+                                        <td colspan="6" class="text-center">Belum ada data jadwal</td>
+                                    </tr>
+                                    @endif
+                                </tbody>
+                            </table>
                         </div>
                     </section>
                 </section>

@@ -167,3 +167,5 @@ Route::put('/rute/{id}', [RuteController::class, 'update'])->name('rute.update')
 
 
 Route::get('/cek-jadwal', [JadwalController::class, 'cekJadwal'])->name('cek-jadwal');
+Route::post('/jadwal/pesan', [JadwalController::class, 'pesan'])->name('jadwal.pesan');
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');

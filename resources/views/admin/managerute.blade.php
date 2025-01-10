@@ -40,7 +40,6 @@
 
         <section id="content">
             <div class="manage-rutes">
-                <h2>Tambah Rute</h2>
                 <form action="{{ route('rute.store') }}" method="POST" class="mb-4">
                     @csrf
                     <div class="row">

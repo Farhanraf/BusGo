@@ -40,7 +40,6 @@
 
         <section id="content">
             <div class="add-schedule">
-                <h2>Tambah Jadwal</h2>
                 <form action="{{ route('jadwal.store') }}" method="POST">
                     @csrf
                     <div class="form-group">

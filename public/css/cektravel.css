@@ -727,3 +727,131 @@ body {
     color: #555;
     margin: 5px 0;
 }
+
+.jadwal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.jadwal-table th,
+.jadwal-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.jadwal-table th {
+    background-color: #2c3e50;
+    color: white;
+    text-transform: uppercase;
+}
+
+.jadwal-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: #1abc9c;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #16a085;
+}
+
+.cek-travel-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.cek-travel-section .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.cek-travel-section .section-description {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+.cek-travel-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cek-travel-section h1 {
+    font-size: 24px;
+    color: #34495e;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.cek-travel-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.cek-travel-section table th,
+.cek-travel-section table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.cek-travel-section table th {
+    background-color: #34495e;
+    color: white;
+    font-weight: bold;
+}
+
+.cek-travel-section table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+.cek-travel-section table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.cek-travel-section button {
+    padding: 8px 12px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cek-travel-section button:hover {
+    background-color: #16a085;
+}
+
+.alert-success {
+    padding: 10px 15px;
+    background-color: #2ecc71;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+}

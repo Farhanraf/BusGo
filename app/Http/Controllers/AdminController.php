@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+
 
 class AdminController extends Controller
 {
@@ -51,24 +53,24 @@ class AdminController extends Controller
 
     // Mengupdate data admin
     public function update(Request $request, $id_admin)
-{
-    $admin = Admin::find($id_admin);
+    {
+        $admin = Admin::find($id_admin);
 
-    if (!$admin) {
-        return redirect()->back()->with('error', 'Admin tidak ditemukan.');
+        if (!$admin) {
+            return redirect()->back()->with('error', 'Admin tidak ditemukan.');
+        }
+
+        // Update username dan password jika ada
+        $admin->username = $request->input('username');
+        if ($request->input('password')) {
+            $admin->password = bcrypt($request->input('password')); // Encrypt password
+        }
+
+        $admin->save();
+
+        // Redirect ke halaman daftar admin dengan pesan sukses
+        return redirect()->route('admin.manage')->with('success', 'Admin berhasil diperbarui.');
     }
-
-    // Update username dan password jika ada
-    $admin->username = $request->input('username');
-    if ($request->input('password')) {
-        $admin->password = bcrypt($request->input('password')); // Encrypt password
-    }
-
-    $admin->save();
-
-    // Redirect ke halaman daftar admin dengan pesan sukses
-    return redirect()->route('admin.manage')->with('success', 'Admin berhasil diperbarui.');
-}
 
 
 
@@ -79,5 +81,15 @@ class AdminController extends Controller
         $admin->delete();
 
         return redirect()->route('manage.admin')->with('success', 'Admin berhasil dihapus');
+    }
+
+    public function dashboard()
+    {
+        $totalUsers = DB::table('users')->count(); // Menghitung total user
+        $totalAdmins = Admin::count();
+        $totalRutes = DB::table('rutes')->count(); // Menghitung total rute
+        $activeBuses = DB::table('buses')->where('status', 'active')->count(); // Menghitung bus aktif
+
+        return view('admin.dashboard', compact('totalUsers', 'totalAdmins', 'totalRutes', 'activeBuses'));
     }
 }
