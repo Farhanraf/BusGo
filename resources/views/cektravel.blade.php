@@ -117,9 +117,9 @@
                                 <a href="/destinasi" class="navbar-link" data-nav-link>Destinasi</a>
                             </li>
 
-                            <li>
+                            <!-- <li>
                                 <a href="/aboutus" class="navbar-link" data-nav-link>About Us</a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="/logout" class="navbar-link" data-nav-link>LogOut</a>
                             </li>
@@ -164,7 +164,7 @@
                                     <tr>
                                         <td>{{ $item->id_jadwal }}</td>
                                         <td>{{ $item->bus->nama_bus }}</td>
-                                        <td>{{ $item->rute->nama_rute }}</td>
+                                        <td>{{ $item->rute->kota_awal }} - {{ $item->rute->kota_tujuan }}</td>
                                         <td>{{ $item->waktu_berangkat }}</td>
                                         <td>{{ $item->waktu_tiba }}</td>
                                         <td>
@@ -178,6 +178,7 @@
                                     </tr>
                                     @endif
                                 </tbody>
+
                             </table>
                         </div>
                     </section>

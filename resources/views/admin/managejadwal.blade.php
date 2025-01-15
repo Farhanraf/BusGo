@@ -55,8 +55,9 @@
                         <label for="id_rute">Rute</label>
                         <select name="id_rute" id="id_rute" class="form-control">
                             @foreach ($rutes as $rute)
-                            <option value="{{ $rute->id_rute }}">{{ $rute->nama_rute }}</option>
+                            <option value="{{ $rute->id_rute }}">{{ $rute->kota_awal }} - {{ $rute->kota_tujuan }}</option>
                             @endforeach
+
                         </select>
                     </div>
 
@@ -93,10 +94,11 @@
                         <tr>
                             <td>{{ $jadwal->id_jadwal }}</td>
                             <td>{{ $jadwal->bus->nama_bus }}</td>
-                            <td>{{ $jadwal->rute->nama_rute }}</td>
+                            <td>{{ $jadwal->rute->kota_awal }} - {{ $jadwal->rute->kota_tujuan }}</td>
                             <td>{{ $jadwal->waktu_berangkat }}</td>
                             <td>{{ $jadwal->waktu_tiba }}</td>
                             <td>
+                                <a href="{{ route('jadwal.edit', $jadwal->id_jadwal) }}" class="btn btn-warning btn-sm">Edit</a>
                                 <form action="{{ route('jadwal.destroy', $jadwal->id_jadwal) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')

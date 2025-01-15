@@ -15,9 +15,19 @@ class JadwalController extends Controller
         $buses = Bus::all();
         $rutes = Rute::all();
         $jadwal = Jadwal::with(['bus', 'rute'])->get(); // Mengambil data jadwal beserta relasi bus dan rute
-        return view('cektravel', compact('jadwal'));
+
         return view('admin.managejadwal', compact('jadwals', 'buses', 'rutes'));
     }
+
+    public function showJadwal()
+    {
+        // Mengambil semua data jadwal beserta relasi bus dan rute
+        $jadwal = Jadwal::with(['bus', 'rute'])->get();
+
+        // Mengirim data ke view 'cektravel'
+        return view('cektravel', compact('jadwal'));
+    }
+
 
     public function store(Request $request)
     {
@@ -49,7 +59,7 @@ class JadwalController extends Controller
         $jadwal = Jadwal::findOrFail($id);
         $buses = Bus::all();
         $rutes = Rute::all();
-        return view('editjadwal', compact('jadwal', 'buses', 'rutes'));
+        return view('admin.editjadwal', compact('jadwal', 'buses', 'rutes'));
     }
 
     public function update(Request $request, $id)

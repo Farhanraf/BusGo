@@ -8,6 +8,8 @@ use App\Http\Controllers\RuteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\PemesananController;
 
 Route::post('/login/user', [AuthController::class, 'loginUser']);
 Route::post('/login/admin', [AuthController::class, 'loginAdmin']);
@@ -151,13 +153,17 @@ Route::put('/jadwal/{id}', [JadwalController::class, 'update'])->name('jadwal.up
 
 
 // Menampilkan halaman utama manage rute
-Route::get('/managerute', [RuteController::class, 'index'])->name('rute.index');
+Route::get('/managerutes', [RuteController::class, 'index'])->name('rute.index');
 
 // Menyimpan data rute baru
 Route::post('/managerute', [RuteController::class, 'store'])->name('rute.store');
 
 // Menghapus data rute berdasarkan ID
 Route::delete('/managerute/{id}', [RuteController::class, 'destroy'])->name('rute.destroy');
+
+Route::get('/rute/{id}/edit', [RuteController::class, 'edit'])->name('rute.edit');
+Route::put('/rute/{id}', [RuteController::class, 'update'])->name('rute.update');
+
 
 // Menampilkan form edit rute berdasarkan ID
 Route::get('/rute/{id}/edit', [RuteController::class, 'edit'])->name('rute.edit');
@@ -169,3 +175,7 @@ Route::put('/rute/{id}', [RuteController::class, 'update'])->name('rute.update')
 Route::get('/cek-jadwal', [JadwalController::class, 'cekJadwal'])->name('cek-jadwal');
 Route::post('/jadwal/pesan', [JadwalController::class, 'pesan'])->name('jadwal.pesan');
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+
+Route::get('/cektravel', [JadwalController::class, 'showJadwal']);
+Route::get('/order', [PemesananController::class, 'index']);
+

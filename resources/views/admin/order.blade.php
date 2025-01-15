@@ -39,8 +39,39 @@
         </header>
 
         <section id="content">
-            <h2>Manage Orders</h2>
-            
+            <div class="container mt-5">
+                <h2>Data Pemesanan</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID Pemesanan</th>
+                            <th>Nama User</th>
+                            <th>Jadwal</th>
+                            <th>Nomor Kursi</th>
+                            <th>Status Pemesanan</th>
+                            <th>Status Pembayaran</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if($pemesanans->isEmpty())
+                        <tr>
+                            <td colspan="6" class="text-center">Tidak ada data pemesanan.</td>
+                        </tr>
+                        @else
+                        @foreach ($pemesanans as $pemesanan)
+                        <tr>
+                            <td>{{ $pemesanan->id_pesan }}</td>
+                            <td>{{ $pemesanan->user->name }}</td>
+                            <td>{{ $pemesanan->jadwal->tanggal }} - {{ $pemesanan->jadwal->waktu }}</td>
+                            <td>{{ $pemesanan->nomor_kursi }}</td>
+                            <td>{{ $pemesanan->status_pemesanan }}</td>
+                            <td>{{ $pemesanan->status_pembayaran }}</td>
+                        </tr>
+                        @endforeach
+                        @endif
+                    </tbody>
+                </table>
+            </div>
         </section>
     </div>
 

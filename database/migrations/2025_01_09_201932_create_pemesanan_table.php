@@ -18,12 +18,10 @@ class CreatePemesananTable extends Migration
             $table->unsignedBigInteger('id_user'); // Foreign key ke user
             $table->unsignedBigInteger('id_jadwal'); // Foreign key ke jadwal
             $table->integer('nomor_kursi');
-            $table->enum('status_pemesanan', ['terkonfirmasi', 'menunggu', 'dibatalkan']);
-            $table->enum('status_pembayaran', ['dibayar', 'belum_dibayar']);
             $table->timestamps();
 
             // Foreign key constraints
-            $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_jadwal')->references('id_jadwal')->on('jadwal')->onDelete('cascade');
         });
     }

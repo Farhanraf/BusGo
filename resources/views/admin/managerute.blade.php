@@ -87,7 +87,11 @@
                             <td>{{ $rute->jarak }}</td>
                             <td>{{ number_format($rute->harga, 2) }}</td>
                             <td>
-                                <form action="{{ route('rute.destroy', $rute->id_rute) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus rute ini?')">
+                                <!-- Tombol Edit -->
+                                <a href="{{ route('rute.edit', $rute->id_rute) }}" class="btn btn-warning btn-sm">Edit</a>
+
+                                <!-- Tombol Hapus -->
+                                <form action="{{ route('rute.destroy', $rute->id_rute) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus rute ini?')" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm">Hapus</button>

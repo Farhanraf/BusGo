@@ -117,9 +117,9 @@
                                 <a href="/destinasi" class="navbar-link" data-nav-link>Destinasi</a>
                             </li>
 
-                            <li>
+                            <!-- <li>
                                 <a href="/aboutus" class="navbar-link" data-nav-link>About Us</a>
-                            </li>
+                            </li> -->
 
                             <li>
                                 <a href="/logout" class="navbar-link" data-nav-link>LogOut</a>

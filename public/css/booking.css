@@ -600,125 +600,82 @@ body {
     padding-top: 125px;
 }
 
-/* General Styles */
-.booking-section {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(2px);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 1200px;
-}
-
-.section-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #ffffff;
-    text-align: left;
-}
-
-.section-description {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-/* Booking Container */
-.booking-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.left-container, .right-container {
-    width: 48%;
-    background-color: #fff;
+/* General container style */
+.containers {
+    width: 80%;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styles */
-.route-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.route-form input {
-    width: 100%;
-    padding: 10px;
+/* Heading style */
+h2 {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
     margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    color: #333;
 }
 
-.partner-card {
-    background-color: #fafafa;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-}
-
-.partner-logo {
-    width: 50px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.partner-name, .seats, .price, .departure-date {
-    font-size: 14px;
-}
-
-/* Right Container Styles */
-#mitra-name, #jam-keberangkatan, #jam-kedatangan, #hari-tanggal {
-    font-weight: bold;
-}
-
-.seat-selection {
-    margin-top: 20px;
-}
-
-.seat-options {
+/* Form styling */
+.booking-form {
     display: flex;
-    gap: 10px;
+    flex-direction: column;
 }
 
-.seat {
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
+/* Form group style */
+.form-group {
+    margin-bottom: 20px;
 }
 
-.seat.available {
-    background-color: #28a745;
+/* Label styling */
+.form-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
 }
 
-.seat.booked {
-    background-color: #dc3545;
-}
-
-.seat.selected {
-    background-color: #007bff;
-}
-
-.btn-continue {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+/* Input and select elements styling */
+.form-control {
     width: 100%;
-    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
 }
 
-.btn-continue:hover {
+/* Focus effect for input and select elements */
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button styling */
+.btn-submit {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
     background-color: #0056b3;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .containers {
+        width: 90%;
+    }
+
+    .form-control, .btn-submit {
+        font-size: 0.9rem;
+    }
 }

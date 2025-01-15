@@ -13,7 +13,7 @@ class RuteController extends Controller
     public function index()
     {
         $rutes = Rute::all();
-        @dd($rutes);
+        // @dd($rutes);
         return view('admin.managerute', compact('rutes'));
     }
 
@@ -42,23 +42,22 @@ class RuteController extends Controller
     public function edit($id)
     {
         $rute = Rute::findOrFail($id);
-        return view('editrute', compact('rute'));
+        return view('admin.editrute', compact('rute'));
     }
 
     // Mengupdate data rute
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'kota_awal' => 'required|max:100',
-            'kota_tujuan' => 'required|max:100',
-            'jarak' => 'required|numeric',
-            'harga' => 'required|numeric',
-        ]);
-
         $rute = Rute::findOrFail($id);
-        $rute->update($request->all());
+        $rute->kota_awal = $request->kota_awal;
+        $rute->kota_tujuan = $request->kota_tujuan;
+        $rute->jarak = $request->jarak;
+        $rute->harga = $request->harga;
+        $rute->save();
+
         return redirect()->route('rute.index')->with('success', 'Rute berhasil diperbarui');
     }
+
 
     /**
      * Menghapus data rute berdasarkan ID.
