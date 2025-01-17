@@ -14,4 +14,25 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdownMenu.style.display = 'none';
         }
     });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteButtons = document.querySelectorAll('.delete');
+        const editButtons = document.querySelectorAll('.edit');
+    
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                if (confirm('Are you sure you want to delete this bus?')) {
+                    alert('Bus deleted successfully!');
+                }
+            });
+        });
+    
+        editButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                alert('Edit functionality coming soon!');
+            });
+        });
+    });
+    
+    
 });
